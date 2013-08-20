@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bootstrap | Angular Inline</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+    <!-- Angular JS-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+
+<body ng-controller="TemplateDataCtrl">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">{{project.name}}</a>
+        </div><!--/container-->
+    </div><!--navbar-inner-->
+</div><!--/navbar-->
+
+<div class="container">
+    
+    <div class="hero-unit">
+        <h1>{{hero.headline}}</h1>
+        <p>{{hero.text}}</p>
+        <p><a class="btn btn-primary btn-large">{{hero.buttonText}}</a></p>
+    </div><!--/hero-unit-->
+
+    <div class="row">
+
+        <div class="span4">
+            <h2>{{module.headline1}}</h2>
+            <p>{{module.text1}}</p>
+            <p><a class="btn" href="#">{{module.buttonText}}</a></p>
+        </div><!--/span4-->
+
+        <div class="span4">
+            <h2>{{module.headline2}}</h2>
+            <p>{{module.text2}}</p>
+            <p><a class="btn" href="#">{{module.buttonText}}</a></p>
+        </div><!--/span4-->
+
+        <div class="span4">
+            <h2>{{module.headline3}}</h2>
+            <p>{{module.text3}}</p>
+            <p><a class="btn" href="#">{{module.buttonText}}</a></p>
+        </div><!--/span4-->
+
+    </div><!--/row-->
+    <hr>
+
+</div><!-- /container -->
+
+
+<script>
+function TemplateDataCtrl($scope) {
+    $scope.project =
+    {
+        "name": "Angular Template"
+    }
+
+    $scope.hero =
+    {
+        "headline": "Hello Angular Inline!",
+        "text": "This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.",
+        "buttonText": "Learn More »"
+    }
+
+    $scope.module =
+    {
+        "headline1": "Module One",
+        "headline2": "Module Two",
+        "headline3": "Module Three",
+        "buttonText": "View details »",
+        "text1": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+        "text2": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+        "text3": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
+    }
+};
+</script>
+</body>
+</html>

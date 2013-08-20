@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bootstrap | Angular jSON</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+    <!-- Angular JS-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+
+<body ng-controller="TemplateDataCtrl">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">{{project.name}}</a>
+        </div><!--/container-->
+    </div><!--navbar-inner-->
+</div><!--/navbar-->
+
+<div class="container">
+    
+    <div class="hero-unit">
+        <h1>{{project.headline}}</h1>
+        <p>{{project.heroText}}</p>
+        <p><a class="btn btn-primary btn-large">{{project.heroButtonText}}</a></p>
+    </div><!--/hero-unit-->
+
+    <div class="row">
+        <div class="span4">
+            <h2>{{project.moduleHeadline1}}</h2>
+            <p>{{project.moduleText1}}</p>
+            <p><a class="btn" href="#">{{project.moduleButtonText}}</a></p>
+        </div><!--/span4-->
+
+        <div class="span4">
+            <h2>{{project.moduleHeadline2}}</h2>
+            <p>{{project.moduleText2}}</p>
+            <p><a class="btn" href="#">{{project.moduleButtonText}}</a></p>
+        </div><!--/span4-->
+
+        <div class="span4">
+            <h2>{{project.moduleHeadline3}}</h2>
+            <p>{{project.moduleText3}}</p>
+            <p><a class="btn" href="#">{{project.moduleButtonText}}</a></p>
+        </div><!--/span4-->
+    </div><!--/row-->
+    <hr>
+
+</div><!-- /container -->
+
+<script>
+function TemplateDataCtrl($scope, $routeParams, $http) {
+  $http.get('json/data.json').success(function(data) {
+    $scope.project = data;
+  });
+}
+</script>
+</body>
+</html>
